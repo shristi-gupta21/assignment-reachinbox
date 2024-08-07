@@ -7,14 +7,28 @@ export const Sidebar = () => {
       <Img src="/images/m-logo.svg" className=" pb-20" />
       <div className="flex flex-col justify-between h-full">
         <div className="flex flex-col gap-8">
-          <Img src="/images/home.svg" />
-          <Img src="/images/user-search.svg" />
-          <Img src="/images/email.svg" />
-          <Img src="/images/send.svg" />
-          <Img src="/images/mail-list.svg" />
-          <Img src="/images/bar-chart.svg" />
+          <button className="hover:bg-[#1e293b] hover:rounded-md flex items-center justify-center">
+            <Img src="/images/home.svg" />
+          </button>
+          <button className="hover:bg-[#1e293b] hover:rounded-md flex items-center justify-center">
+            <Img src="/images/user-search.svg" />
+          </button>
+          <button className="hover:bg-[#1e293b] hover:rounded-md flex items-center justify-center">
+            <Img src="/images/email.svg" />
+          </button>
+          <button className="hover:bg-[#1e293b] hover:rounded-md flex items-center justify-center">
+            <Img src="/images/send.svg" />
+          </button>
+          <button className="hover:bg-[#1e293b] hover:rounded-md flex items-center justify-center">
+            <Img src="/images/mail-list.svg" />
+          </button>
+          <button className="hover:bg-[#1e293b] hover:rounded-md flex items-center justify-center">
+            <Img src="/images/bar-chart.svg" />
+          </button>
         </div>
-        <Img src="/images/user_icon.svg" />
+        <button>
+          <Img src="/images/user_icon.svg" />
+        </button>
       </div>
     </div>
   );
