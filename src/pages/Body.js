@@ -13,12 +13,16 @@ export const Body = () => {
         <title>ReachInbox - Onebox</title>
         <meta name="description" content="login/signup page" />
       </Helmet>
-      <div className="h-screen font-sans  ">
+      <div className="h-screen font-sans bg-black">
         <div className="h-full flex">
           <Sidebar />
           <div className="w-full h-full">
             <Header />
-            <AllInbox />
+            <div className="w-full">
+              <div className="w-1/5">
+                <AllInbox />
+              </div>
+            </div>
           </div>
         </div>
       </div>
