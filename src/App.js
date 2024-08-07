@@ -4,7 +4,11 @@ import { BrowserRouter as Router } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 
 function App() {
-  return <LoginPage />;
+  return (
+    <div className="min-h-screen">
+      <LoginPage />
+    </div>
+  );
 }
 
 export default App;

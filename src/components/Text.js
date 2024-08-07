@@ -1,7 +1,8 @@
 import React from "react";
+import clsx from "clsx";
 
 const sizes = {
-  extra_small: "font-['Open_Sans'] text-[0.75rem] font-normal not-italic",
+  extra_small: "text-xs font-normal not-italic",
   textxs: "text-[0.63rem] font-normal not-italic",
   textsm: "text-[0.75rem] font-normal not-italic",
   textmd: "text-[0.81rem] font-normal not-italic",
@@ -21,7 +22,7 @@ const Text = ({
 
   return (
     <Component
-      className={`text-[#ffffff] font-['Inter'] ${className} ${sizes[size]}`}
+      className={clsx("text-white", className, sizes[size])}
       {...restProps}
     >
       {children}

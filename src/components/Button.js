@@ -1,22 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
+import clsx from "clsx";
 
 const shapes = {
-  square: "rounded-[0px]",
   circle: "rounded-[50%]",
   round: "rounded-[12px]",
 };
 
 const variants = {
   outline: {
-    gray_600_01: "border-[#707071] border border-solid text-[#cccccc]",
+    gray_600_01: "border-[#707071] border border-solid ",
     gray_300: "border-[#d3e3e8] border border-solid",
   },
   gradient: {
     red_A200_red_900:
       "bg-gradient-to-b from-[#fa5252] to-[#a81018] text-[#ffffff]",
     indigo_400_blue_900_fc:
-      "bg-gradient-to-b from-[#4a62dd] to-[#0423bfc] text-[#ffffff]",
+      "bg-gradient-to-r from-[#4a62dd] to-[#0423bfc] text-[#ffffff]",
   },
   fill: {
     gray_200_01: "bg-[#ebebeb] text-[#5c7cfa]",
@@ -32,12 +32,12 @@ const variants = {
 };
 
 const sizes = {
-  "2xl": "h-[3.00rem] px-[2.13rem] text-[1.00rem]",
-  xl: "h-[2.50rem] pl-[1.50rem] pr-[2.13rem] text-[0.88rem]",
-  lg: "h-[2.00rem] px-[1.50rem] text-[0.88rem]",
-  md: "h-[1.50rem] px-[1.25rem] text-[0.63rem]",
-  sm: "h-[1.50rem] px-[0.50rem] text-[0.63rem]",
-  xs: "h-[1.25rem] px-[0.50rem] text-[0.63rem]",
+  "2xl": "h-[3.00rem]  text-[1.00rem]",
+  xl: "h-[2.50rem]  text-[0.88rem]",
+  lg: "h-[2.00rem]  text-[0.88rem]",
+  md: "h-[1.50rem] text-[0.63rem]",
+  sm: "h-[1.50rem]  text-[0.63rem]",
+  xs: "h-[1.25rem] text-[0.63rem]",
 };
 
 const Button = ({
@@ -48,12 +48,18 @@ const Button = ({
   shape,
   variant = "fill",
   size = "lg",
-  color = "gray_900_01",
+  color = "",
   ...restProps
 }) => {
   return (
     <button
-      className={`${className} flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap ${sizes[size]} ${shapes[shape]} ${variants[variant][color]}`}
+      className={clsx(
+        className,
+        "flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap",
+        sizes[size],
+        shapes[shape],
+        variants[variant][color]
+      )}
       {...restProps}
     >
       {!!leftIcon && leftIcon}
