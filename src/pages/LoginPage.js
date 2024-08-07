@@ -9,11 +9,8 @@ export default function LoginPage() {
   return (
     <>
       <Helmet>
-        <title>Login Page</title>
-        <meta
-          name="description"
-          content="Web site created using create-react-app"
-        />
+        <title>Login/Signup Page</title>
+        <meta name="description" content="login/signup page" />
       </Helmet>
       <div className="bg-black h-screen font-sans">
         <header className="flex w-full border-b-[#343A40] border-b flex-col items-center justify-center h-16 bg-[#000000] ">
@@ -24,7 +21,7 @@ export default function LoginPage() {
           />
         </header>
         <div className=" flex justify-center h-[90%] items-center ">
-          <div className="border-[#343A40] border px-10 pt-6 pb-10 rounded-2xl flex flex-col gap-12 bg-gradient-to-r from-[#111214] to-[#121212]">
+          <div className="border-[#343A40] border px-6 sm:px-10 pt-6 pb-10 rounded-2xl flex flex-col gap-12 bg-gradient-to-r from-[#111214] to-[#121212]">
             <div className="flex flex-col items-center gap-6">
               <Heading size="heading4xl" as="h1">
                 Create a new account
@@ -36,7 +33,7 @@ export default function LoginPage() {
                 leftIcon={
                   <Img src="images/google.svg" alt="Frame" className="" />
                 }
-                className=" self-stretch text-white rounded px-24 gap-3"
+                className=" self-stretch text-white rounded px-16 sm:px-24 gap-3"
               >
                 Sign Up with Google
               </Button>
@@ -48,7 +45,7 @@ export default function LoginPage() {
               >
                 Create an Account
               </Button>
-              <div className="px-[3.50rem] md:px-[1.25rem]">
+              <div className="">
                 <div className="flex flex-wrap justify-center gap-[0.25rem]">
                   <a href="#">
                     <Text size="text2xl" as="p" className=" !text-[#909296]">
@@ -65,7 +62,7 @@ export default function LoginPage() {
             </div>
           </div>
         </div>
-        <footer className="flex items-center justify-center border-t border-solid border-[#25262b] h-8 w-full">
+        <footer className="bg-[#121212] flex items-center justify-center border-t border-solid border-[#25262b] h-8 w-full">
           <div className=" flex justify-center">
             <Text size="extra_small" as="p" className="!text-[#5c5f66]">
               © 2023 Reachinbox. All rights reserved.
