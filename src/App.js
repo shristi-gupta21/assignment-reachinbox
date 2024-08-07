@@ -2,7 +2,7 @@ import React from "react";
 // import Routes from "./Routes";
 import { BrowserRouter as Router } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
-import { Sidebar } from "./pages/Sidebar";
+import { Sidebar } from "./components/Sidebar";
 import { Body } from "./pages/Body";
 
 function App() {
