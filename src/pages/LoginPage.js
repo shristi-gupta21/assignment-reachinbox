@@ -1,5 +1,4 @@
 import { Helmet } from "react-helmet";
-import { Text } from "../components/Text";
 import { Button } from "../components/Button";
 import { Heading } from "../components/Heading";
 import { Img } from "../components/Img";
@@ -48,14 +47,12 @@ export default function LoginPage() {
               <div className="">
                 <div className="flex flex-wrap justify-center gap-[0.25rem]">
                   <a href="#">
-                    <Text size="text2xl" as="p" className=" !text-[#909296]">
+                    <p className=" !text-[#909296] ">
                       Already have an account?
-                    </Text>
+                    </p>
                   </a>
                   <a href="#">
-                    <Text size="text2xl" as="p" className=" !text-[#c1c2c5]">
-                      Sign In
-                    </Text>
+                    <p className=" !text-[#c1c2c5]">Already have an account?</p>
                   </a>
                 </div>
               </div>
@@ -64,9 +61,9 @@ export default function LoginPage() {
         </div>
         <footer className="bg-[#121212] flex items-center justify-center border-t border-solid border-[#25262b] h-8 w-full">
           <div className=" flex justify-center">
-            <Text size="extra_small" as="p" className="!text-[#5c5f66]">
+            <p className="text-xs !text-[#5c5f66]">
               © 2023 Reachinbox. All rights reserved.
-            </Text>
+            </p>
           </div>
         </footer>
       </div>
