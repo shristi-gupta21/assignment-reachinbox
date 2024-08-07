@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import { Header } from "../components/Header";
 import { Img } from "../components/Img";
 import { NoMessageScreen } from "../components/NoMessageScreen";
+import { AllInbox } from "../components/AllInbox";
 
 export const Body = () => {
   return (
@@ -17,7 +18,7 @@ export const Body = () => {
           <Sidebar />
           <div className="w-full h-full">
             <Header />
-            <NoMessageScreen />
+            <AllInbox />
           </div>
         </div>
       </div>

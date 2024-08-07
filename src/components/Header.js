@@ -9,6 +9,9 @@ export const Header = () => {
       <div className="flex gap-5">
         <Toggle value={isEnabled} onChange={setIsEnabled} />
         <DropDown
+          heading={"Tim’s Workspace"}
+          textClasses={"text-white text-sm font-semibold"}
+          iconClasses={"h-5 w-5 flex-none text-white"}
           array={[
             {
               name: "About us",
