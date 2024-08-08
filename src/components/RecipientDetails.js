@@ -4,7 +4,7 @@ import { Img } from "./Img";
 
 export default function RecipientDetails({ name, email }) {
   return (
-    <div className="flex justify-between px-5 py-4 border-b border-[#F8FAFC]/20">
+    <div className=" flex justify-between px-5 py-4 border-b border-[#F8FAFC]/20">
       <div>
         <p className="text-white font-semibold text-sm">{name}</p>
         <span className="text-white/40 text-xs">{email}</span>
@@ -23,6 +23,7 @@ export default function RecipientDetails({ name, email }) {
                 href: "#",
               },
             ]}
+            dropdownPosition={"w-28"}
           />
         </div>
         <div className="border border-[#343A40] rounded px-4 py-1.5 bg-[#1F1F1F] flex items-center gap-2">
@@ -36,6 +37,7 @@ export default function RecipientDetails({ name, email }) {
                 href: "#",
               },
             ]}
+            dropdownPosition={"-left-4 w-28"}
           />
         </div>
         <div className="border border-[#343A40] rounded p-2 bg-[#1F1F1F] flex items-center gap-2">
@@ -45,10 +47,11 @@ export default function RecipientDetails({ name, email }) {
             iconClasses={"hidden"}
             array={[
               {
-                name: "All Inbox",
-                href: "#",
+                name: "Delete",
+                type: "button",
               },
             ]}
+            dropdownPosition={"-left-6 "}
           />
         </div>
       </div>

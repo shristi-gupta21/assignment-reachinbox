@@ -9,8 +9,8 @@ export const MessageBox = ({ name, email }) => {
   const [show, setShow] = useState(false);
 
   return (
-    <div className="relative h-full flex flex-col justify-between items-start ">
-      <div className="overflow-y-scroll mb-4">
+    <div className=" relative z-10 h-full flex flex-col justify-between items-start ">
+      <div className="overflow-y-scroll mb-4  relative z-10">
         <RecipientDetails name={name} email={email} />
         <Messages
           subject={"New Product Launch"}

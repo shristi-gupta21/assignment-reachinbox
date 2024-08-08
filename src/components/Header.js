@@ -30,6 +30,7 @@ export const Header = () => {
               href: "#",
             },
           ]}
+          dropdownPosition={"w-36"}
         />
       </div>
     </header>

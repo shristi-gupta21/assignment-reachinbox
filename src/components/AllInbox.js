@@ -54,6 +54,7 @@ export const AllInbox = () => {
                 href: "#",
               },
             ]}
+            dropdownPosition={"w-24 -left-4"}
           />
         </div>
         <div className="w-full ">
