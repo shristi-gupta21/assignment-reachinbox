@@ -16,11 +16,15 @@ export const Sidebar = () => {
           <button className="hover:bg-[#1e293b] hover:rounded-md flex items-center justify-center">
             <Img src="/images/email.svg" />
           </button>
+
           <button className="hover:bg-[#1e293b] hover:rounded-md flex items-center justify-center">
             <Img src="/images/send.svg" />
           </button>
           <button className="hover:bg-[#1e293b] hover:rounded-md flex items-center justify-center">
             <Img src="/images/mail-list.svg" />
+          </button>
+          <button className="hover:bg-[#1e293b] h-7 w-7 rounded bg-[#1e293b] hover:rounded-md flex items-center justify-center">
+            <Img src="/images/inbox.svg" />
           </button>
           <button className="hover:bg-[#1e293b] hover:rounded-md flex items-center justify-center">
             <Img src="/images/bar-chart.svg" />

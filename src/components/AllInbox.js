@@ -51,9 +51,7 @@ export const AllInbox = ({ setShowData }) => {
           </button>
         </div>
         <span className="text-sm text-[#7F7F7F] ">
-          <span className="text-white font-bold">
-            {data.length}/{data.length}
-          </span>
+          <span className="text-white font-bold">0/{data.length}</span>
           Inboxes selected
         </span>
         <input
@@ -64,7 +62,7 @@ export const AllInbox = ({ setShowData }) => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1">
             <div className="bg-[#222426] w-8 h-6 text-[#5C7CFA] font-semibold flex justify-center items-center rounded-full">
-              {data.length}
+              {0}
             </div>
             <span className="text-white font-semibold text-sm">
               New Replies
