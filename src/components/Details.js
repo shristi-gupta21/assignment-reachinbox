@@ -51,19 +51,23 @@ export const Details = ({ array }) => {
               </div>
             </div>
             <div>
-              <p className="text-xs font-semibold text-white">Step-1: Email</p>
+              <p className="text-xs font-semibold text-white pb-1">
+                Step-2: Email
+              </p>
               <div className="flex text-[#b9b9b9] text-[0.625rem] items-center ">
-                <Img src="/images/send-outline.svg" />
-                <p>Sent</p>
-                <p className="font-semibold pl-1">3rd,Feb</p>
+                <Img src="/images/drafts.svg" />
+                <p className="pl-2">Opened</p>
+                <p className="font-semibold pl-1">5 hours ago</p>
               </div>
             </div>
             <div>
-              <p className="text-xs font-semibold text-white">Step-1: Email</p>
+              <p className="text-xs font-semibold text-white pb-1">
+                Step-3: Email
+              </p>
               <div className="flex text-[#b9b9b9] text-[0.625rem] items-center ">
-                <Img src="/images/send-outline.svg" />
-                <p>Sent</p>
-                <p className="font-semibold pl-1">3rd,Feb</p>
+                <Img src="/images/drafts.svg" />
+                <p className="pl-2">Opened</p>
+                <p className="font-semibold pl-1">5 hours ago</p>
               </div>
             </div>
           </div>
