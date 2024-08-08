@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Img } from "./Img";
 import { Button } from "./Button";
 import RecipientDetails from "./RecipientDetails";
@@ -6,6 +6,8 @@ import Messages from "./Messages";
 import { ReplyCard } from "./ReplyCard";
 
 export const MessageBox = ({ name, email }) => {
+  const [show, setShow] = useState(false);
+
   return (
     <div className="relative h-full flex flex-col justify-between items-start ">
       <div>
@@ -19,16 +21,21 @@ export const MessageBox = ({ name, email }) => {
           FIRST_NAME="Shristi"
         />
       </div>
-      <ReplyCard
-        to={"jeanne@icloud.com"}
-        from="peter@reachinbox.com"
-        subject={"Warmup Welcome"}
-      />
+      {show && (
+        <ReplyCard
+          to={"jeanne@icloud.com"}
+          from="peter@reachinbox.com"
+          subject={"Warmup Welcome"}
+          setShow={setShow}
+          // show={show}
+        />
+      )}
       <div className="px-10 pb-6">
         <Button
           size="xl"
           leftIcon={<Img src="/images/reply.svg" />}
           className="gap-2 rounded text-white pl-6 pr-10 w-fit font-semibold bg-gradient-to-r from-[#4B63DD] to-[#0524BF]"
+          onClick={() => setShow(!show)}
         >
           Reply
         </Button>
