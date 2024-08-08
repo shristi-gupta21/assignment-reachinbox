@@ -56,6 +56,7 @@ export const ConversationCard = ({
       <div className="h-px w-full border-t-[#F8FAFC]/20 border-t "></div>
 
       <div
+        key={id}
         className={`${
           unread ? "" : "pl-2"
         }  py-4 flex items-start gap-2 w-full`}

@@ -7,7 +7,7 @@ import { ReplyCard } from "./ReplyCard";
 
 export const MessageBox = ({ data }) => {
   const [show, setShow] = useState(false);
-  console.log(data);
+  // console.log(data);
   return (
     <div className="w-full relative z-10 h-full flex flex-col justify-between items-start ">
       <div className="w-full overflow-y-scroll mb-4  relative z-10">

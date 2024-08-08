@@ -25,7 +25,7 @@ export default function LoginPage() {
       .then((response) => {
         const fetchedToken = response.data.token; // Adjust based on actual response structure
         setToken(fetchedToken);
-        console.log(response);
+        // console.log(response);
         // Now fetch the data using the token
         fetchData(fetchedToken);
       })

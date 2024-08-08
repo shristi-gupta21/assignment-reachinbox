@@ -88,6 +88,7 @@ export const AllInbox = ({ setShowData }) => {
         <div className="w-full ">
           {data.map(({ fromEmail, updatedAt, body, isRead, id }) => (
             <ConversationCard
+              key={id}
               email={fromEmail}
               date={updatedAt}
               message={body}
