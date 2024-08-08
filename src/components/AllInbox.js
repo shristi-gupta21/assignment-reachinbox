@@ -52,11 +52,20 @@ export const AllInbox = () => {
             ]}
           />
         </div>
-        <ConversationCard
-          email={"Beata@gmail.com"}
-          date={"Mar 7"}
-          message={"I've tried a lot and ."}
-        />
+        <div>
+          <ConversationCard
+            email={"Beata@gmail.com"}
+            date={"Mar 7"}
+            message={"I've tried a lot and ."}
+            tagName={"interested"}
+          />
+          <ConversationCard
+            email={"Beata@gmail.com"}
+            date={"Mar 7"}
+            message={"I've tried a lot and ."}
+            tagName={"interested"}
+          />
+        </div>
       </div>
     </section>
   );
