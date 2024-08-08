@@ -26,7 +26,7 @@ export const ReplyCard = ({ to, from, subject, setShow }) => {
         <div className="w-full h-full px-8 py-5">
           <textarea
             placeholder="Hey."
-            class="w-full h-96 bg-transparent focus:outline-none placeholder-gray-500 p-2 resize-none placeholder:text-xs text-xs"
+            className="w-full h-96 bg-transparent focus:outline-none placeholder-gray-500 p-2 resize-none placeholder:text-xs text-xs"
           ></textarea>
         </div>
         <div className="flex items-center gap-5 border-t border-t-[#41464B] pl-3 py-1.5 text-xs font-semibold">

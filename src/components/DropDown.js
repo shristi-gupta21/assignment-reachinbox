@@ -12,6 +12,7 @@ export const DropDown = ({
   imgPath,
   imgClasses,
   dropdownPosition,
+  onClickfunc,
 }) => {
   return (
     <Popover className="relative flex items-center">
@@ -43,6 +44,7 @@ export const DropDown = ({
             )}
             {item.type == "button" && (
               <button
+                onClick={onClickfunc}
                 key={item.name}
                 className="block text-sm w-full font-semibold leading-6 py-2 px-2 text-gray-900"
               >
