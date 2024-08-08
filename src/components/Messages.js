@@ -1,15 +1,7 @@
 import React, { useState } from "react";
 import { Img } from "./Img";
 import { MessageCard } from "./MessageCard";
-export default function Messages({
-  subject,
-  date,
-  from,
-  cc,
-  to,
-  FIRST_NAME,
-  body,
-}) {
+export default function Messages({ subject, date, from, cc, to, body }) {
   const [show, setShow] = useState(false);
   return (
     <div className="p-5 ">
@@ -24,11 +16,10 @@ export default function Messages({
         from={from}
         cc={cc}
         to={to}
-        FIRST_NAME={FIRST_NAME}
         body={body}
       />
 
-      {!show && (
+      {/* {!show && (
         <div className="w-full h-px relative bg-[#F8FAFC]/20">
           <button
             onClick={() => setShow(!show)}
@@ -38,8 +29,8 @@ export default function Messages({
             View all<span className="text-[#4285F4]">4</span>replies
           </button>
         </div>
-      )}
-      {show && (
+      )} */}
+      {/* {show && (
         <>
           <MessageCard
             subject={subject}
@@ -47,7 +38,6 @@ export default function Messages({
             from={from}
             cc={cc}
             to={to}
-            FIRST_NAME={FIRST_NAME}
           />
           <MessageCard
             subject={subject}
@@ -55,10 +45,9 @@ export default function Messages({
             from={from}
             cc={cc}
             to={to}
-            FIRST_NAME={FIRST_NAME}
           />
         </>
-      )}
+      )} */}
     </div>
   );
 }

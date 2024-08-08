@@ -21,15 +21,14 @@ export const MessageBox = ({ data }) => {
           from={data[0]["fromEmail"]}
           cc={data[0]["cc"].length === 0 ? "" : data[0]["cc"][0]}
           to={data[0]["toEmail"]}
-          FIRST_NAME={data[0]["fromName"]}
           body={data[0]["body"]}
         />
       </div>
       {show && (
         <ReplyCard
-          to={"jeanne@icloud.com"}
-          from="peter@reachinbox.com"
-          subject={"Warmup Welcome"}
+          to={data[0]["toEmail"]}
+          from={data[0]["fromEmail"]}
+          subject={data[0]["subject"]}
           setShow={setShow}
         />
       )}
