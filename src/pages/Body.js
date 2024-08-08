@@ -18,8 +18,8 @@ export const Body = () => {
           <Sidebar />
           <div className="w-full h-full">
             <Header />
-            <div className="w-full">
-              <div className="w-1/5">
+            <div className="w-full h-full">
+              <div className="w-1/5 h-full">
                 <AllInbox />
               </div>
             </div>

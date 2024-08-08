@@ -5,7 +5,7 @@ import { ConversationCard } from "./ConversationCard";
 
 export const AllInbox = () => {
   return (
-    <section className="bg-black p-4">
+    <section className="bg-black p-4  border-r-[#33383F] border-r h-full">
       <div className=" flex flex-col gap-5">
         <div className="flex items-center justify-between">
           <DropDown
