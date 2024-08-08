@@ -17,7 +17,7 @@ export const MessageBox = ({ data }) => {
         />
         <Messages
           subject={data[0]["subject"]}
-          date={"20 june 2022 : 9:16AM"}
+          date={data[0]["updatedAt"]}
           from={data[0]["fromEmail"]}
           cc={data[0]["cc"].length === 0 ? "" : data[0]["cc"][0]}
           to={data[0]["toEmail"]}
