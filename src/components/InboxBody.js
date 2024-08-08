@@ -1,5 +1,10 @@
 import React from "react";
+import { MessageBox } from "./MessageBox";
 
 export const InboxBody = () => {
-  return <div>InboxBody</div>;
+  return (
+    <div>
+      <MessageBox name="Orlando" email="orladom@gmail.com" />
+    </div>
+  );
 };

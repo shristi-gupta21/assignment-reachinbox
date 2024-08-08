@@ -2,13 +2,24 @@ import React from "react";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import clsx from "clsx";
+import { Img } from "./Img";
 
-export const DropDown = ({ heading, array, textClasses, iconClasses }) => {
+export const DropDown = ({
+  heading,
+  array,
+  textClasses,
+  iconClasses,
+  imgPath,
+  imgClasses,
+}) => {
   return (
     <Popover className="relative flex items-center">
       <PopoverButton className="flex items-center gap-x-1  leading-6  focus:outline-none">
-        <p className={clsx(textClasses)}>{heading}</p>
-        <ChevronDownIcon aria-hidden="true" className={clsx(iconClasses)} />
+        {heading && <p className={clsx(textClasses)}>{heading}</p>}
+        {imgPath && <Img src={imgPath} className={imgClasses} />}
+        {iconClasses && (
+          <ChevronDownIcon aria-hidden="true" className={clsx(iconClasses)} />
+        )}
       </PopoverButton>
 
       <PopoverPanel

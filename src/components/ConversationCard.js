@@ -47,9 +47,9 @@ export const ConversationCard = ({
   return (
     <button className="flex flex-col w-full">
       <div className="h-px w-full border-t-[#F8FAFC]/20 border-t "></div>
-      <div className={`${unread ? "" : "pl-2"}  py-4 flex flex-col `}>
+      <div className={`${unread ? "" : "pl-2"}  py-4 flex flex-col w-full`}>
         <div className="flex">{unread && <Unread />}</div>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between w-full">
           <p className="text-white font-medium text-sm">{email}</p>
           <p className="text-xs text-[#FCFCFC]/40 pr-2">{date}</p>
         </div>
