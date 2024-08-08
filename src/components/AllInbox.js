@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { DropDown } from "./DropDown";
 import { Img } from "./Img";
 import { ConversationCard } from "./ConversationCard";
-
+import axios from "axios";
 export const AllInbox = () => {
+  const [data, setData] = useState([]);
+  const token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoiZ3NocmlzdGk0MEBnbWFpbC5jb20iLCJpZCI6NDEzLCJmaXJzdE5hbWUiOiJTaHJpc3RpIiwibGFzdE5hbWUiOiJHdXB0YSJ9LCJpYXQiOjE3MjMxMzI2NTAsImV4cCI6MTc1NDY2ODY1MH0.ZXKOpQTRL0xbXWGEo1Kg0FI4NTFHuP0WR1wq0ODCRzQ";
+  useEffect(() => {
+    const authUrl = "https://hiring.reachinbox.xyz/api/v1/onebox/list";
+
+    axios
+      .get(authUrl, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        // console.log(response.data.data);
+        setData(response.data.data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }, []);
+  console.log(data);
+
   return (
     <section className="bg-black p-4  border-r-[#33383F] border-r h-full overflow-y-scroll ">
       <div className=" flex flex-col gap-5">
@@ -24,7 +46,10 @@ export const AllInbox = () => {
           </button>
         </div>
         <span className="text-sm text-[#7F7F7F] ">
-          <span className="text-white font-bold">25/25</span> Inboxes selected
+          <span className="text-white font-bold">
+            {data.length}/{data.length}
+          </span>
+          Inboxes selected
         </span>
         <input
           type="text"
@@ -34,7 +59,7 @@ export const AllInbox = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1">
             <div className="bg-[#222426] w-8 h-6 text-[#5C7CFA] font-semibold flex justify-center items-center rounded-full">
-              26
+              {data.length}
             </div>
             <span className="text-white font-semibold text-sm">
               New Replies
@@ -58,48 +83,17 @@ export const AllInbox = () => {
           />
         </div>
         <div className="w-full ">
-          <ConversationCard
-            email={"Beata@gmail.com"}
-            date={"Mar 7"}
-            message={"I've tried a lot and ."}
-            tagName={"interested"}
-          />
-          <ConversationCard
-            email={"Beata@gmail.com"}
-            date={"Mar 7"}
-            message={"I've tried a lot and ."}
-            tagName={"interested"}
-          />
-          <ConversationCard
-            email={"Beata@gmail.com"}
-            date={"Mar 7"}
-            message={"I've tried a lot and ."}
-            tagName={"interested"}
-          />
-          <ConversationCard
-            email={"Beata@gmail.com"}
-            date={"Mar 7"}
-            message={"I've tried a lot and ."}
-            tagName={"interested"}
-          />
-          <ConversationCard
-            email={"Beata@gmail.com"}
-            date={"Mar 7"}
-            message={"I've tried a lot and ."}
-            tagName={"interested"}
-          />
-          <ConversationCard
-            email={"Beata@gmail.com"}
-            date={"Mar 7"}
-            message={"I've tried a lot and ."}
-            tagName={"interested"}
-          />
-          <ConversationCard
-            email={"Beata@gmail.com"}
-            date={"Mar 7"}
-            message={"I've tried a lot and ."}
-            tagName={"interested"}
-          />
+          {data.map(({ fromEmail, updatedAt, body, isRead }) => (
+            <>
+              <ConversationCard
+                email={fromEmail}
+                date={updatedAt}
+                message={body}
+                tagName={"interested"}
+                unread={isRead}
+              />
+            </>
+          ))}
         </div>
       </div>
     </section>

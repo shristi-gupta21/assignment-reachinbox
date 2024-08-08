@@ -8,7 +8,7 @@ import { AllInbox } from "../components/AllInbox";
 import { InboxBody } from "../components/InboxBody";
 import { Details } from "../components/Details";
 
-export const Body = () => {
+export default function Body() {
   return (
     <>
       <Helmet>
@@ -44,4 +44,4 @@ export const Body = () => {
       </div>
     </>
   );
-};
+}

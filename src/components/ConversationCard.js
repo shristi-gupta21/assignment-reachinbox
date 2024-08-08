@@ -1,5 +1,6 @@
 import React from "react";
 import { Img } from "./Img";
+import parse from "html-react-parser";
 
 const typeTags = {
   interested: {
@@ -37,32 +38,40 @@ function Tag({ tagName }) {
     </div>
   );
 }
-export const ConversationCard = ({
-  unread = false,
-  email,
-  date,
-  message,
-  tagName,
-}) => {
+export const ConversationCard = ({ unread, email, date, message, tagName }) => {
   return (
     <button className="flex flex-col w-full">
       <div className="h-px w-full border-t-[#F8FAFC]/20 border-t "></div>
-      <div className={`${unread ? "" : "pl-2"}  py-4 flex flex-col w-full`}>
-        <div className="flex">{unread && <Unread />}</div>
-        <div className="flex items-center justify-between w-full">
-          <p className="text-white font-medium text-sm">{email}</p>
-          <p className="text-xs text-[#FCFCFC]/40 pr-2">{date}</p>
-        </div>
-        <span className="pb-2 pt-0.5 text-xs text-[#E1E0E0] text-left">
-          {message}
-        </span>
-        <div className="flex items-center gap-2 pt-2 ">
-          <Tag tagName={tagName} />
-          <div className="gap-1 bg-[#222426] rounded-full px-2 py-1 flex justify-center items-center">
-            <Img src="/images/send.svg" className={"h-3.5"} />
-            <p className=" text-white text-[0.625rem] font-semibold">
-              Campaign Name
+
+      <div
+        className={`${
+          unread ? "" : "pl-2"
+        }  py-4 flex items-start gap-2 w-full`}
+      >
+        <div className="flex pt-2">{unread && <Unread />}</div>
+        <div className="w-full">
+          <div className="flex items-center justify-between w-full">
+            <p className="text-white font-medium text-sm">{email}</p>
+            <p className="text-xs text-[#FCFCFC]/40 pr-2">
+              {new Date(date).toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+              })}
             </p>
+          </div>
+
+          <div className="pb-2 pt-0.5 text-xs text-[#E1E0E0] text-left line-clamp-1 text-ellipsis">
+            {parse(message)}
+          </div>
+
+          <div className="flex items-center gap-2 pt-2 ">
+            <Tag tagName={tagName} />
+            <div className="gap-1 bg-[#222426] rounded-full px-2 py-1 flex justify-center items-center">
+              <Img src="/images/send.svg" className={"h-3.5"} />
+              <p className=" text-white text-[0.625rem] font-semibold">
+                Campaign Name
+              </p>
+            </div>
           </div>
         </div>
       </div>

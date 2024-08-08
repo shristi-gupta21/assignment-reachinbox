@@ -3,7 +3,7 @@ import { Img } from "./Img";
 import { Button } from "./Button";
 export const ReplyCard = ({ to, from, subject, setShow }) => {
   return (
-    <div className="px-5 absolute w-full py-6 bottom-0 ">
+    <div className="px-5 absolute w-full py-6 bottom-0 z-20">
       <div className="  border border-[#41464B] overflow-hidden bg-[#141517] rounded-lg text-white ">
         <div className="border-b border-b-[#41464B] pl-8 py-3 bg-[#23272C] flex justify-between items-center pr-2">
           <span className="text-white font-bold text-xs"> Reply</span>
