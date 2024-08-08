@@ -57,7 +57,7 @@ export const AllInbox = ({ setShowData }) => {
         <input
           type="text"
           placeholder="Search"
-          className="h-7 w-full placeholder:text-sm placeholder:text-white/20 bg-[#23272C] rounded border-white/20 border px-1.5 py-1 custom-placeholder"
+          className="h-7 w-full placeholder:text-sm placeholder:text-white/20 bg-[#23272C] rounded border-white/20 border px-1.5 py-1 text-white text-sm custom-placeholder"
         />
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1">
