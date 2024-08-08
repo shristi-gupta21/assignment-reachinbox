@@ -47,3 +47,52 @@ body {
   background: #555;
   opacity: 0;
 }
+
+.timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #6b7280; /* Gray-500 */
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -25px;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #6b7280; /* Gray-500 */
+  border-radius: 50%;
+  background-color: #1f2937; /* Gray-800 */
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #374151; /* Gray-700 */
+  color: white;
+}
+
+.icon img {
+  width: 20px;
+  height: 20px;
+}
