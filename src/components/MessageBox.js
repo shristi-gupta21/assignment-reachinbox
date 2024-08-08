@@ -10,7 +10,7 @@ export const MessageBox = ({ name, email }) => {
 
   return (
     <div className="relative h-full flex flex-col justify-between items-start ">
-      <div>
+      <div className="overflow-y-scroll mb-4">
         <RecipientDetails name={name} email={email} />
         <Messages
           subject={"New Product Launch"}
@@ -27,7 +27,6 @@ export const MessageBox = ({ name, email }) => {
           from="peter@reachinbox.com"
           subject={"Warmup Welcome"}
           setShow={setShow}
-          // show={show}
         />
       )}
       <div className="px-10 pb-6">
