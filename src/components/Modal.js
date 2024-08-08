@@ -40,9 +40,6 @@ function Modal({ title, handleDismiss, children }) {
               onClick={handleDismiss}
             >
               <Img src="/images/close.svg" />
-              {/* <VisuallyHidden>
-                Dismiss modal
-              </VisuallyHidden> */}
             </button>
 
             <h2 className=" text-white font-semibold text-2xl">
@@ -54,6 +51,7 @@ function Modal({ title, handleDismiss, children }) {
             <div className="flex gap-5 pt-5">
               <Button
                 size="2xl"
+                onClick={handleDismiss}
                 className=" rounded text-white px-9 w-fit font-semibold bg-[#25262B]"
               >
                 Cancel
