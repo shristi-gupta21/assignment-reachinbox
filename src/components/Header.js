@@ -24,7 +24,8 @@ export const Header = () => {
             },
             {
               name: "Logout",
-              href: "#",
+              type: "route",
+              to: "/login",
             },
           ]}
           dropdownPosition={"w-36"}

@@ -3,7 +3,8 @@ import { Button } from "../components/Button";
 import { Heading } from "../components/Heading";
 import { Img } from "../components/Img";
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
   const [token, setToken] = useState(
@@ -16,22 +17,25 @@ export default function LoginPage() {
       return <div>Error: {error}</div>;
     }
   };
+  const navigate = useNavigate();
   function handleClick() {
-    const authUrl =
-      "https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=http://localhost:3000/";
+    navigate("/");
 
-    axios
-      .get(authUrl)
-      .then((response) => {
-        const fetchedToken = response.data.token; // Adjust based on actual response structure
-        setToken(fetchedToken);
-        // console.log(response);
-        // Now fetch the data using the token
-        fetchData(fetchedToken);
-      })
-      .catch((error) => {
-        setError("Authentication failed: " + error.message);
-      });
+    // const authUrl =
+    //   "https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=http://localhost:3000/";
+
+    // axios
+    //   .get(authUrl)
+    //   .then((response) => {
+    //     const fetchedToken = response.data.token; // Adjust based on actual response structure
+    //     setToken(fetchedToken);
+    //     // console.log(response);
+    //     // Now fetch the data using the token
+    //     fetchData(fetchedToken);
+    //   })
+    //   .catch((error) => {
+    //     setError("Authentication failed: " + error.message);
+    //   });
   }
   // I was trying to hit the api but i was getting this error
   // My localhost:300 was blocked by CORS policy
@@ -76,22 +80,25 @@ export default function LoginPage() {
               </Button>
             </div>
             <div className="mb-4 flex flex-col items-center gap-6">
-              <Button
-                size="2xl"
-                className=" rounded text-white px-9 w-fit font-semibold bg-gradient-to-r from-[#4B63DD] to-[#0524BF]"
-              >
-                Create an Account
-              </Button>
+              <Link to="/">
+                {" "}
+                <Button
+                  size="2xl"
+                  className=" rounded text-white px-9 w-fit font-semibold bg-gradient-to-r from-[#4B63DD] to-[#0524BF]"
+                >
+                  Create an Account
+                </Button>
+              </Link>
               <div className="">
                 <div className="flex flex-wrap justify-center gap-[0.25rem]">
-                  <a href="#">
+                  <Link to="/">
                     <p className=" !text-[#909296] ">
                       Already have an account?
                     </p>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link to="/">
                     <p className=" !text-[#c1c2c5]">Sign In</p>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

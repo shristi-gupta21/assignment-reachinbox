@@ -3,6 +3,7 @@ import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import clsx from "clsx";
 import { Img } from "./Img";
+import { Link } from "react-router-dom";
 
 export const DropDown = ({
   heading,
@@ -46,11 +47,21 @@ export const DropDown = ({
               <button
                 onClick={onClickfunc}
                 key={item.name}
-                className="block text-sm w-full font-semibold leading-6 py-2 px-2 text-gray-900"
+                className="block text-sm w-full font-semibold leading-6 py-2 px-2 text-white"
               >
                 {item.name}
                 <span className="absolute inset-0" />
               </button>
+            )}
+            {item.type == "route" && (
+              <Link
+                to={item.to}
+                key={item.name}
+                className="block text-sm w-full font-semibold leading-6 py-2 px-2 text-white"
+              >
+                {item.name}
+                <span className="absolute inset-0" />
+              </Link>
             )}
           </div>
         ))}
