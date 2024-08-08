@@ -38,9 +38,21 @@ function Tag({ tagName }) {
     </div>
   );
 }
-export const ConversationCard = ({ unread, email, date, message, tagName }) => {
+export const ConversationCard = ({
+  unread,
+  email,
+  date,
+  message,
+  tagName,
+  setClickedId,
+  id,
+}) => {
   return (
-    <button className="flex flex-col w-full">
+    <button
+      key={id}
+      onClick={() => setClickedId(id)}
+      className="flex flex-col w-full"
+    >
       <div className="h-px w-full border-t-[#F8FAFC]/20 border-t "></div>
 
       <div

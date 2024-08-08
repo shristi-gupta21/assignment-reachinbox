@@ -5,20 +5,24 @@ import RecipientDetails from "./RecipientDetails";
 import Messages from "./Messages";
 import { ReplyCard } from "./ReplyCard";
 
-export const MessageBox = ({ name, email }) => {
+export const MessageBox = ({ data }) => {
   const [show, setShow] = useState(false);
-
+  console.log(data);
   return (
-    <div className=" relative z-10 h-full flex flex-col justify-between items-start ">
-      <div className="overflow-y-scroll mb-4  relative z-10">
-        <RecipientDetails name={name} email={email} />
+    <div className="w-full relative z-10 h-full flex flex-col justify-between items-start ">
+      <div className="w-full overflow-y-scroll mb-4  relative z-10">
+        <RecipientDetails
+          name={data[0]["fromName"]}
+          email={data[0]["fromEmail"]}
+        />
         <Messages
-          subject={"New Product Launch"}
+          subject={data[0]["subject"]}
           date={"20 june 2022 : 9:16AM"}
-          from="jeanne@icloud.com"
-          cc=" lennon.j@mail.com"
-          to="lennon.j@mail.com"
-          FIRST_NAME="Shristi"
+          from={data[0]["fromEmail"]}
+          cc={data[0]["cc"].length === 0 ? "" : data[0]["cc"][0]}
+          to={data[0]["toEmail"]}
+          FIRST_NAME={data[0]["fromName"]}
+          body={data[0]["body"]}
         />
       </div>
       {show && (

@@ -90,7 +90,7 @@ export default function LoginPage() {
                     </p>
                   </a>
                   <a href="#">
-                    <p className=" !text-[#c1c2c5]">Already have an account?</p>
+                    <p className=" !text-[#c1c2c5]">Sign In</p>
                   </a>
                 </div>
               </div>

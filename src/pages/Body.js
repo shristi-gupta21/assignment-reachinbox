@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Sidebar } from "../components/Sidebar";
 import { Helmet } from "react-helmet";
 import { Header } from "../components/Header";
-import { Img } from "../components/Img";
-import { NoMessageScreen } from "../components/NoMessageScreen";
 import { AllInbox } from "../components/AllInbox";
-import { InboxBody } from "../components/InboxBody";
 import { Details } from "../components/Details";
+import { MessageBox } from "../components/MessageBox";
+import { NoMessageScreen } from "../components/NoMessageScreen";
 
 export default function Body() {
+  const [showData, setShowData] = useState([]);
+
   return (
     <>
       <Helmet>
         <title>ReachInbox - Onebox</title>
-        <meta name="description" content="login/signup page" />
+        <meta name="description" content="ReachInbox" />
       </Helmet>
       <div className="h-screen font-sans bg-black">
         <div className="h-full flex">
@@ -22,10 +23,14 @@ export default function Body() {
             <Header />
             <div className="w-full h-[calc(100%-4rem)] flex ">
               <div className="w-1/5 h-full">
-                <AllInbox />
+                <AllInbox setShowData={setShowData} />
               </div>
               <div className="w-3/5 h-full">
-                <InboxBody />
+                {showData.length !== 0 ? (
+                  <MessageBox data={showData} />
+                ) : (
+                  <NoMessageScreen />
+                )}
               </div>
               <div className="w-1/5">
                 <Details

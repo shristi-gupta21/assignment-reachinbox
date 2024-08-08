@@ -3,8 +3,10 @@ import { DropDown } from "./DropDown";
 import { Img } from "./Img";
 import { ConversationCard } from "./ConversationCard";
 import axios from "axios";
-export const AllInbox = () => {
+export const AllInbox = ({ setShowData }) => {
   const [data, setData] = useState([]);
+  const [clickedId, setClickedId] = useState(null);
+
   const token =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoiZ3NocmlzdGk0MEBnbWFpbC5jb20iLCJpZCI6NDEzLCJmaXJzdE5hbWUiOiJTaHJpc3RpIiwibGFzdE5hbWUiOiJHdXB0YSJ9LCJpYXQiOjE3MjMxMzI2NTAsImV4cCI6MTc1NDY2ODY1MH0.ZXKOpQTRL0xbXWGEo1Kg0FI4NTFHuP0WR1wq0ODCRzQ";
   useEffect(() => {
@@ -17,15 +19,18 @@ export const AllInbox = () => {
         },
       })
       .then((response) => {
-        // console.log(response.data.data);
         setData(response.data.data);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   }, []);
-  console.log(data);
-
+  useEffect(() => {
+    if (clickedId) {
+      let newArr = data.filter(({ id }) => id === clickedId);
+      setShowData(newArr);
+    }
+  }, [clickedId]);
   return (
     <section className="bg-black p-4  border-r-[#33383F] border-r h-full overflow-y-scroll ">
       <div className=" flex flex-col gap-5">
@@ -83,16 +88,16 @@ export const AllInbox = () => {
           />
         </div>
         <div className="w-full ">
-          {data.map(({ fromEmail, updatedAt, body, isRead }) => (
-            <>
-              <ConversationCard
-                email={fromEmail}
-                date={updatedAt}
-                message={body}
-                tagName={"interested"}
-                unread={isRead}
-              />
-            </>
+          {data.map(({ fromEmail, updatedAt, body, isRead, id }) => (
+            <ConversationCard
+              email={fromEmail}
+              date={updatedAt}
+              message={body}
+              tagName={"interested"}
+              unread={isRead}
+              setClickedId={setClickedId}
+              id={id}
+            />
           ))}
         </div>
       </div>

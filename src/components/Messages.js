@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import { Img } from "./Img";
 import { MessageCard } from "./MessageCard";
-export default function Messages({ subject, date, from, cc, to, FIRST_NAME }) {
+export default function Messages({
+  subject,
+  date,
+  from,
+  cc,
+  to,
+  FIRST_NAME,
+  body,
+}) {
   const [show, setShow] = useState(false);
   return (
     <div className="p-5 ">
@@ -17,6 +25,7 @@ export default function Messages({ subject, date, from, cc, to, FIRST_NAME }) {
         cc={cc}
         to={to}
         FIRST_NAME={FIRST_NAME}
+        body={body}
       />
 
       {!show && (
