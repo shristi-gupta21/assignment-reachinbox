@@ -23,11 +23,23 @@ export default function RecipientDetails({ name, email }) {
               iconClasses={"h-4 w-4 flex-none text-[#D3D7DB] font-semibold"}
               array={[
                 {
-                  name: "All Inbox",
+                  name: "Interested",
+                  href: "#",
+                },
+                {
+                  name: "Closed",
+                  href: "#",
+                },
+                {
+                  name: "Meeting Booked",
+                  href: "#",
+                },
+                {
+                  name: "Meeting Completed",
                   href: "#",
                 },
               ]}
-              dropdownPosition={"w-28"}
+              dropdownPosition={"w-40 -left-4"}
             />
           </div>
           <div className="border border-[#343A40] rounded px-4 py-1.5 bg-[#1F1F1F] flex items-center gap-2">
@@ -37,7 +49,15 @@ export default function RecipientDetails({ name, email }) {
               iconClasses={"h-4 w-4 flex-none text-[#D3D7DB] font-semibold"}
               array={[
                 {
-                  name: "All Inbox",
+                  name: "Inbox",
+                  href: "#",
+                },
+                {
+                  name: "Archive",
+                  href: "#",
+                },
+                {
+                  name: "Spam",
                   href: "#",
                 },
               ]}

@@ -14,19 +14,16 @@ export const Header = () => {
           iconClasses={"h-5 w-5 flex-none text-white"}
           array={[
             {
-              name: "About us",
+              name: "Profile",
               href: "#",
             },
-            {
-              name: "Careers",
-              href: "#",
-            },
+
             {
               name: "Support",
               href: "#",
             },
             {
-              name: "Blog",
+              name: "Logout",
               href: "#",
             },
           ]}
