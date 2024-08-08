@@ -5,7 +5,7 @@ import { ConversationCard } from "./ConversationCard";
 
 export const AllInbox = () => {
   return (
-    <section className="bg-black p-4  border-r-[#33383F] border-r h-full">
+    <section className="bg-black p-4  border-r-[#33383F] border-r h-full overflow-y-scroll ">
       <div className=" flex flex-col gap-5">
         <div className="flex items-center justify-between">
           <DropDown
@@ -46,13 +46,47 @@ export const AllInbox = () => {
             iconClasses={"h-4 w-4 flex-none text-white font-bold"}
             array={[
               {
-                name: "All Inbox",
+                name: "Newest",
+                href: "#",
+              },
+              {
+                name: "Oldest",
                 href: "#",
               },
             ]}
           />
         </div>
-        <div>
+        <div className="w-full ">
+          <ConversationCard
+            email={"Beata@gmail.com"}
+            date={"Mar 7"}
+            message={"I've tried a lot and ."}
+            tagName={"interested"}
+          />
+          <ConversationCard
+            email={"Beata@gmail.com"}
+            date={"Mar 7"}
+            message={"I've tried a lot and ."}
+            tagName={"interested"}
+          />
+          <ConversationCard
+            email={"Beata@gmail.com"}
+            date={"Mar 7"}
+            message={"I've tried a lot and ."}
+            tagName={"interested"}
+          />
+          <ConversationCard
+            email={"Beata@gmail.com"}
+            date={"Mar 7"}
+            message={"I've tried a lot and ."}
+            tagName={"interested"}
+          />
+          <ConversationCard
+            email={"Beata@gmail.com"}
+            date={"Mar 7"}
+            message={"I've tried a lot and ."}
+            tagName={"interested"}
+          />
           <ConversationCard
             email={"Beata@gmail.com"}
             date={"Mar 7"}

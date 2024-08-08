@@ -18,7 +18,7 @@ export const Body = () => {
           <Sidebar />
           <div className="w-full h-full">
             <Header />
-            <div className="w-full h-full">
+            <div className="w-full h-[calc(100%-4rem)]">
               <div className="w-1/5 h-full">
                 <AllInbox />
               </div>

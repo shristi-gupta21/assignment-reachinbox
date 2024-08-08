@@ -45,7 +45,7 @@ export const ConversationCard = ({
   tagName,
 }) => {
   return (
-    <button className="flex flex-col">
+    <button className="flex flex-col w-full">
       <div className="h-px w-full border-t-[#F8FAFC]/20 border-t "></div>
       <div className={`${unread ? "" : "pl-2"}  py-4 flex flex-col `}>
         <div className="flex">{unread && <Unread />}</div>
