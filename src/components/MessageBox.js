@@ -1,6 +1,7 @@
 import React from "react";
 import { DropDown } from "./DropDown";
 import { Img } from "./Img";
+import { Button } from "./Button";
 
 function Messages({ subject, date, from, cc, to, FIRST_NAME }) {
   return (
@@ -32,74 +33,85 @@ function Messages({ subject, date, from, cc, to, FIRST_NAME }) {
         </div>
       </div>
       <div className="w-full h-px relative bg-[#F8FAFC]/20">
-        <div className="flex gap-2 items-center text-white absolute -top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-[0.625rem] font-semibold bg-[#171819] px-2.5 py-1">
+        <button className="flex gap-2 items-center text-white absolute -top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-[0.625rem] font-semibold bg-[#171819] px-2.5 py-1">
           <Img src="/images/expand.svg" />
-          View all <span className="text-[#4285F4]">4</span> replies
-        </div>
+          View all<span className="text-[#4285F4]">4</span>replies
+        </button>
       </div>
     </div>
   );
 }
 export const MessageBox = ({ name, email }) => {
   return (
-    <div>
-      <div className="flex justify-between px-5 py-4 border-b border-[#F8FAFC]/20">
-        <div>
-          <p className="text-white font-semibold text-sm">{name}</p>
-          <span className="text-white/40 text-xs">{email}</span>
-        </div>
-        <div className="flex gap-4">
-          <div className="border border-[#343A40] rounded px-2 py-1.5 bg-[#1F1F1F] flex items-center gap-2">
-            <Img src="/images/meeting-completed.svg" />
+    <div className="h-full flex flex-col justify-between items-start ">
+      <div>
+        <div className="flex justify-between px-5 py-4 border-b border-[#F8FAFC]/20">
+          <div>
+            <p className="text-white font-semibold text-sm">{name}</p>
+            <span className="text-white/40 text-xs">{email}</span>
+          </div>
+          <div className="flex gap-4">
+            <div className="border border-[#343A40] rounded px-2 py-1.5 bg-[#1F1F1F] flex items-center gap-2">
+              <Img src="/images/meeting-completed.svg" />
 
-            <DropDown
-              heading={"Meeting Completed"}
-              textClasses={"text-[#D3D7DB] text-xs font-semibold"}
-              iconClasses={"h-4 w-4 flex-none text-[#D3D7DB] font-semibold"}
-              array={[
-                {
-                  name: "All Inbox",
-                  href: "#",
-                },
-              ]}
-            />
-          </div>
-          <div className="border border-[#343A40] rounded px-4 py-1.5 bg-[#1F1F1F] flex items-center gap-2">
-            <DropDown
-              heading={"Move"}
-              textClasses={"text-[#D3D7DB] text-xs font-semibold"}
-              iconClasses={"h-4 w-4 flex-none text-[#D3D7DB] font-semibold"}
-              array={[
-                {
-                  name: "All Inbox",
-                  href: "#",
-                },
-              ]}
-            />
-          </div>
-          <div className="border border-[#343A40] rounded p-2 bg-[#1F1F1F] flex items-center gap-2">
-            <DropDown
-              imgPath={"/images/more.svg"}
-              imgClasses={"h-4 w-4"}
-              iconClasses={"hidden"}
-              array={[
-                {
-                  name: "All Inbox",
-                  href: "#",
-                },
-              ]}
-            />
+              <DropDown
+                heading={"Meeting Completed"}
+                textClasses={"text-[#D3D7DB] text-xs font-semibold"}
+                iconClasses={"h-4 w-4 flex-none text-[#D3D7DB] font-semibold"}
+                array={[
+                  {
+                    name: "All Inbox",
+                    href: "#",
+                  },
+                ]}
+              />
+            </div>
+            <div className="border border-[#343A40] rounded px-4 py-1.5 bg-[#1F1F1F] flex items-center gap-2">
+              <DropDown
+                heading={"Move"}
+                textClasses={"text-[#D3D7DB] text-xs font-semibold"}
+                iconClasses={"h-4 w-4 flex-none text-[#D3D7DB] font-semibold"}
+                array={[
+                  {
+                    name: "All Inbox",
+                    href: "#",
+                  },
+                ]}
+              />
+            </div>
+            <div className="border border-[#343A40] rounded p-2 bg-[#1F1F1F] flex items-center gap-2">
+              <DropDown
+                imgPath={"/images/more.svg"}
+                imgClasses={"h-4 w-4"}
+                iconClasses={"hidden"}
+                array={[
+                  {
+                    name: "All Inbox",
+                    href: "#",
+                  },
+                ]}
+              />
+            </div>
           </div>
         </div>
+        <Messages
+          subject={"New Product Launch"}
+          date={"20 june 2022 : 9:16AM"}
+          from="jeanne@icloud.com"
+          cc=" lennon.j@mail.com"
+          to="lennon.j@mail.com"
+          FIRST_NAME="Shristi"
+        />
       </div>
-      <Messages
-        subject={"New Product Launch"}
-        date={"20 june 2022 : 9:16AM"}
-        from="jeanne@icloud.com"
-        cc=" lennon.j@mail.com"
-        to="lennon.j@mail.com"
-        FIRST_NAME="Shristi"
-      />
+      <div className="px-10 pb-6">
+        <Button
+          size="xl"
+          leftIcon={<Img src="/images/reply.svg" />}
+          className="gap-2 rounded text-white pl-6 pr-10 w-fit font-semibold bg-gradient-to-r from-[#4B63DD] to-[#0524BF]"
+        >
+          Reply
+        </Button>
+      </div>
     </div>
   );
 };

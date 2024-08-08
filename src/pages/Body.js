@@ -24,7 +24,7 @@ export const Body = () => {
               <div className="w-1/5 h-full">
                 <AllInbox />
               </div>
-              <div className="w-3/5">
+              <div className="w-3/5 h-full">
                 <InboxBody />
               </div>
               <div className="w-1/5">

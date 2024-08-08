@@ -32,8 +32,8 @@ const variants = {
 };
 
 const sizes = {
-  "2xl": "h-[3.00rem]  text-[1.00rem]",
-  xl: "h-[2.50rem]  text-[0.88rem]",
+  "2xl": "h-[3.00rem]  text-base",
+  xl: "h-[2.50rem]  text-sm",
   lg: "h-[2.00rem]  text-[0.88rem]",
   md: "h-[1.50rem] text-[0.63rem]",
   sm: "h-[1.50rem]  text-[0.63rem]",
