@@ -22,7 +22,7 @@ export default function Body() {
           <div className="w-full h-full">
             <Header />
             <div className="w-full h-[calc(100%-4rem)] flex ">
-              <div className="w-1/5 h-full">
+              <div className="w-1/3 xl:w-1/5 h-full">
                 <AllInbox setShowData={setShowData} />
               </div>
 
@@ -33,14 +33,14 @@ export default function Body() {
               )}
 
               {showData.length !== 0 && (
-                <div className="w-3/5 h-full">
+                <div className="w-full xl:w-3/5 h-full">
                   {" "}
                   <MessageBox data={showData} />{" "}
                 </div>
               )}
 
               {showData.length !== 0 && (
-                <div className="w-1/5">
+                <div className="xl:w-1/5">
                   <Details
                     array={[
                       ["Name", showData[0]["fromName"]],
